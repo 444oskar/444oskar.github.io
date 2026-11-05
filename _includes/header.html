@@ -26,3 +26,13 @@
     </nav>
   </div>
 </header>
+<script>
+  /* Pause the aurora while the header is off screen, to save battery */
+  (function () {
+    var m = document.querySelector(".masthead");
+    if (!m || !("IntersectionObserver" in window)) return;
+    new IntersectionObserver(function (e) {
+      m.classList.toggle("is-offscreen", !e[0].isIntersecting);
+    }).observe(m);
+  })();
+</script>
