@@ -1,3 +1,12 @@
 title: Side Project Syndrome
 description: Documenting my tangents so the midnight rabbit holes count as research :)
 theme: minima
+github_username: 444oskar
+lang: en-GB
+
+# Page view stats (GoatCounter), dashboard at https://444oskar.goatcounter.com
+goatcounter: 444oskar
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{{ content }}
+
+{%- if site.posts.size > 0 %}
+<section class="post-list" aria-label="Posts">
+  {%- for post in site.posts %}
+  {%- assign words = post.content | strip_html | number_of_words -%}
+  {%- assign minutes = words | divided_by: 200 | at_least: 1 -%}
+  <article class="entry">
+    <p class="entry__meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+      <span>{{ minutes }} min read</span>
+    </p>
+    <h2 class="entry__title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+    <p class="entry__excerpt">{% if post.description %}{{ post.description | escape }}{% else %}{{ post.content | strip_html | normalize_whitespace | truncatewords: 38 }}{% endif %}</p>
+  </article>
+  {%- endfor %}
+</section>
+{%- else %}
+<p class="empty">No posts yet. Add a file to <code>_posts/</code> and it will show up here.</p>
+{%- endif %}

@@ -1,0 +1,32 @@
+---
+layout: default
+---
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 200 | at_least: 1 -%}
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post__header">
+    <h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%-d %B %Y" }}</time>
+      <span>{{ minutes }} min read</span>
+    </p>
+  </header>
+
+  <div class="prose" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <nav class="post__nav" aria-label="More posts">
+    {%- if page.previous %}
+    <a class="post__nav-link" href="{{ page.previous.url | relative_url }}">
+      <span>Older</span>{{ page.previous.title | escape }}
+    </a>
+    {%- endif %}
+    {%- if page.next %}
+    <a class="post__nav-link post__nav-link--next" href="{{ page.next.url | relative_url }}">
+      <span>Newer</span>{{ page.next.title | escape }}
+    </a>
+    {%- endif %}
+    <a class="post__nav-link post__nav-link--all" href="{{ '/' | relative_url }}"><span>Back to</span>All posts</a>
+  </nav>
+</article>

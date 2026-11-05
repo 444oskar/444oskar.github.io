@@ -1,0 +1,8 @@
+{%- comment -%}
+  GoatCounter: private, cookie-free page view stats.
+  Only loads once `goatcounter:` is set in _config.yml, and never during local previews.
+  Your stats dashboard lives at https://YOUR-CODE.goatcounter.com (login required).
+{%- endcomment -%}
+{%- if site.goatcounter and jekyll.environment == "production" %}
+<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+{%- endif %}

@@ -1,0 +1,28 @@
+{%- assign is_home = false -%}
+{%- if page.layout == "home" -%}{%- assign is_home = true -%}{%- endif -%}
+<header class="masthead{% unless is_home %} masthead--compact{% endunless %}">
+  <div class="sky" aria-hidden="true">
+    <div class="aurora">
+      <span class="curtain"></span><span class="curtain"></span><span class="curtain"></span><span class="curtain"></span><span class="curtain"></span>
+      <span class="drape"></span>
+    </div>
+  </div>
+  <div class="wrap masthead__inner">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+    {%- if is_home and site.description %}
+    <p class="tagline">{{ site.description | escape }}</p>
+    {%- endif %}
+    <nav class="site-nav" aria-label="Site">
+      <a href="{{ '/' | relative_url }}">Posts</a>
+      {%- for path in site.header_pages %}
+        {%- assign p = site.pages | where: "path", path | first -%}
+        {%- if p.title %}
+      <a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a>
+        {%- endif -%}
+      {%- endfor %}
+      {%- if site.github_username %}
+      <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+      {%- endif %}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>{{ site.title | escape }}, written after dark.</p>
+    <p>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS feed</a>
+      {%- if site.github_username %}
+      <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+      {%- endif %}
+    </p>
+  </div>
+</footer>
