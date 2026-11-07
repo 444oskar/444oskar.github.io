@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Building My Home Server with TrueNAS"
+title: "Building my home server with TrueNAS"
 date: 2026-11-07
+description: TrueNAS, my mistakes, and fixes!
 categories: [homelab, self-hosting]
 tags: [truenas, zfs, tailscale, adguard-home, immich, jellyfin, networking]
 ---

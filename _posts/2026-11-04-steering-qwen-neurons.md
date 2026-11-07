@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Doing brain surgery on an LLM (sort of)"
+title: "How to do brain surgery on an LLM (sort of)"
 date: 2026-11-04
+description: Neuron Steering, what is it?
 ---
 
 Hiya :)
@@ -20,4 +21,4 @@ I've been experimenting with this just to see what happens, with an end goal of 
 
 There's some great research out there by [@_lyraaaa_](https://x.com/_lyraaaa_), [@treetowntree](https://x.com/treetowntree), and [@Sauers_](https://x.com/Sauers_) on Twitter/X that goes into more depth on how this works, and their results are very amusing! I really recommend you go check them out :) I've been using Lyra's Neuron Explorer repo to steer the neurons of Qwen3.5-4B myself, all running locally on my own GPU: [lyramakesmusic/neuron-explorer](https://github.com/lyramakesmusic/neuron-explorer)
   
-That's all for now but don't worry, I'll be back with more yap soon :)
+That's all for now but don't worry, I'll be back with more soon (results!) :)
